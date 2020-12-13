@@ -28,8 +28,69 @@ public class MainProgram {
             System.out.println("No. It is the professor ID.\n");
         else if(studentID==1810666) hw_1810666();
 	else if (studentID == 1810815) hw_1810815();
+	else if (studentID == 1810859) hw_1810859();
         else
             System.out.println("To be developed...\n");
+    }
+
+    private void hw_1810859() {
+	Scanner scan = new Scanner(System.in);
+	int menu_num;
+	//print initial menu
+	System.out.println("[Student ID: 1810859]");
+	System.out.println("1. Calculate factorial");
+	System.out.println("2. Calculate absolute value");
+	//choose menu_num
+	System.out.print("Enter menu number: ");
+	menu_num = scan.nextInt();
+	//2types function start
+	if (menu_num == 1){
+		//factorial
+		int number_f;
+		System.out.print("Input 1 integer for factorial: ");
+		number_f = scan.nextInt();
+
+		if (number_f < 0){
+			System.out.println("Wrong Input (input 0 or positive integer)");
+		}
+		else {
+			System.out.println("Facorial is " + factorial_1810859(number_f));
+		}
+	}
+	else if (menu_num == 2){
+		//absolute value
+		int number_a;
+		System.out.print("Input 1 integer for absolute value: ");
+		number_a = scan.nextInt();
+		
+		System.out.println("Absolute value is " + absolute_1810859(number_a));
+	}
+	else{
+		System.out.println("Wrong Input (input 1 or 2)");
+	}
+    }
+    //#1 function
+    public int factorial_1810859 (int a){
+	int fac = 1;
+	
+	if (a == 0){
+		return fac;
+	}
+	else{
+		for (int i = a; i >= 1; i--){
+			fac = fac * i;
+		}
+		return fac;
+	}
+    }
+    //#2 function
+    public int absolute_1810859 (int a){
+	if (a >= 0){
+		return a;
+	}
+	else {
+		return -a;
+	}
     }
 
     private void hw_1810815() {
