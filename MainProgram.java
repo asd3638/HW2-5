@@ -75,7 +75,7 @@ public class MainProgram {
 	System.out.println("2. Calculate POW");
     }
 
-    private int calculateMin_1810815(int[] dataArray) {
+    public int calculateMin_1810815(int[] dataArray) {
 	int MIN = Integer.MAX_VALUE;
 
 	for (int i = 0; i < dataArray.length; i++) {
@@ -87,7 +87,7 @@ public class MainProgram {
 	return MIN;
     }
 
-    private int calculatePow_1810815(int[] dataArray) {
+    public int calculatePow_1810815(int[] dataArray) {
 	int POW = 1;
 
 	for (int i = 0; i < dataArray[1]; i++) {
