@@ -26,12 +26,77 @@ public class MainProgram {
     public void runModule(int studentID) {
         if (studentID == 11530)
             System.out.println("No. It is the professor ID.\n");
-        else if(studentID==1810666)
-           hw_1810666();
+        else if(studentID==1810666) hw_1810666();
+	else if (studentID == 1810815) hw_1810815();
         else
             System.out.println("To be developed...\n");
     }
-    
+
+    private void hw_1810815() {
+	Scanner scanner = new Scanner(System.in);
+	int chosenMenu;
+	int[] dataArray;
+	int result;
+
+	printInfo_1810815();
+	
+	System.out.print("Enter menu number: ");
+	chosenMenu = scanner.nextInt();
+	System.out.println();
+
+	if (chosenMenu == 1) {
+		System.out.print("Calculate MIN, input three integers separated by space: ");
+		dataArray = null;
+		dataArray = new int[3];
+		for (int i = 0; i < 3; i++) {
+			dataArray[i] = scanner.nextInt();
+		}
+
+		result = calculateMin_1810815(dataArray);
+	}
+	else {
+		System.out.print("Calculate POW(first ^ second), input two integers separated by space: ");
+		dataArray = null;
+		dataArray = new int[2];
+		for (int i = 0; i < 2; i++) {
+			dataArray[i] = scanner.nextInt();
+		}
+
+		result = calculatePow_1810815(dataArray);
+	}
+
+	System.out.println("The result is: " + result);
+	System.out.println();
+    }
+
+    private void printInfo_1810815() {
+	System.out.println("Student ID: 1810815]");
+	System.out.println("1. Calculate MIN");
+	System.out.println("2. Calculate POW");
+    }
+
+    private int calculateMin_1810815(int[] dataArray) {
+	int MIN = Integer.MAX_VALUE;
+
+	for (int i = 0; i < dataArray.length; i++) {
+		if (dataArray[i] < MIN) {
+			MIN = dataArray[i];
+		}
+	}
+
+	return MIN;
+    }
+
+    private int calculatePow_1810815(int[] dataArray) {
+	int POW = 1;
+
+	for (int i = 0; i < dataArray[1]; i++) {
+		POW *= dataArray[0];
+	}
+	    
+	return POW;
+    }
+
     public void hw_1810666() {
        int choice;
        int n1;int n2; int n3;
@@ -50,7 +115,7 @@ public class MainProgram {
           if(choice==1) {
              System.out.println("-Calculate Max-");
              System.out.println("Input 3 Numbers.");
-             
+            
              System.out.print("First number:");
              n1=n_scan.nextInt();
              System.out.print("Second number:");
